@@ -1,62 +1,6 @@
-// import { notFound } from "next/navigation";
-// import Image from "next/image";
-
-// const projects = [
-//   {
-//     title: "AI-Powered Teacher Dashboard",
-//     slug: "ai-powered-teacher-dashboard",
-//     role: "UX Designer",
-//     duration: "4 Months",
-//     image: "/teacher-dashboard.png",
-//     details:
-//       "This AI-powered dashboard helps teachers track student performance, attendance, and engagement with intelligent insights and predictions.",
-//   },
-//   {
-//     title: "Cipher",
-//     slug: "cipher",
-//     role: "UX Designer",
-//     duration: "4 Months",
-//     image: "/cipher.png",
-//     details:
-//       "Cipher is a futuristic trading platform that leverages AI and data analytics to help traders make informed decisions.",
-//   },
-//   {
-//     title: "Booktopia",
-//     slug: "booktopia",
-//     role: "UX Designer",
-//     duration: "4 Months",
-//     image: "/booktopia.png",
-//     details:
-//       "Booktopia is a digital bookstore with seamless browsing, purchasing, and reading experiences for book lovers.",
-//   },
-// ];
-
-// export default function ProjectPage({ params }: { params: { slug: string } }) {
-//   const project = projects.find((p) => p.slug === params.slug);
-
-//   if (!project) return notFound(); // Handle invalid URLs
-
-//   return (
-//     <main className="min-h-screen bg-[#0a0a0a] text-white py-20 px-6">
-//       <div className="max-w-4xl mx-auto text-center">
-//         <h1 className="text-4xl font-bold mb-6">{project.title}</h1>
-//         <p className="text-gray-400">
-//           {project.role} • {project.duration}
-//         </p>
-//         <Image
-//           src={project.image}
-//           alt={project.title}
-//           width={800}
-//           height={500}
-//           className="rounded-lg mx-auto my-6"
-//         />
-//         <p className="text-gray-300 text-lg">{project.details}</p>
-//       </div>
-//     </main>
-//   );
-// }
 import { notFound } from "next/navigation";
 import Image from "next/image";
+import Link from "next/link";
 
 const projects = [
   {
@@ -211,9 +155,9 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
 
         {/* Back Button */}
         <div className="mt-16 text-center">
-          <a href="/projects" className="text-blue-400 hover:underline">
+          <Link href="/projects" className="text-blue-400 hover:underline">
             ← Back to Projects
-          </a>
+          </Link>
         </div>
       </div>
     </main>
