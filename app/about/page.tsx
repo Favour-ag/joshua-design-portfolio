@@ -1,6 +1,9 @@
+"use client";
+
 import React from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function AboutPage() {
   return (
@@ -35,10 +38,11 @@ export default function AboutPage() {
             </p>
           </div>
           <div className="aspect-square relative rounded-lg overflow-hidden">
-            <img
+            <Image
               src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8"
               alt="Portrait in black and white"
-              className="object-cover w-full h-full"
+              fill
+              className="object-cover"
             />
           </div>
         </section>
@@ -50,10 +54,11 @@ export default function AboutPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div className="aspect-video relative rounded-lg overflow-hidden">
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1511379938547-c1f69419868d"
                 alt="Music studio setup"
-                className="object-cover w-full h-full"
+                fill
+                className="object-cover"
               />
             </div>
             <div className="space-y-4">
@@ -105,10 +110,11 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="aspect-video relative rounded-lg overflow-hidden">
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1507842217343-583bb7270b66"
                 alt="Design workspace"
-                className="object-cover w-full h-full"
+                fill
+                className="object-cover"
               />
             </div>
           </div>
