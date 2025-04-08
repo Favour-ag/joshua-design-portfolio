@@ -24,14 +24,14 @@ export default function AboutPage() {
         <section className="mb-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="space-y-4">
             <p className="text-lg">
-              For a while I've always heard that left-handed people tend to
-              excel in visual-spatial tasks (fun fact: I'm left-handed). I
+              For a while I&apos;ve always heard that left-handed people tend to
+              excel in visual-spatial tasks (fun fact: I&apos;m left-handed). I
               always felt that was absurd but looking at my journey so far
             </p>
             <p className="text-lg">
-              I'm starting to believe that it's true (not that I'm being
-              stereotypical). I graduated from Afk Basosta University with a
-              bachelor's degree in Computer Engineering and I have gotten the
+              I&apos;m starting to believe that it's true (not that I&apos;m
+              being stereotypical). I graduated from Afk Basosta University with
+              a bachelor's degree in Computer Engineering and I have gotten the
               opportunity to work with a lot of designers and developers who
               have inspired me to always develop myself because I believe we
               learn everyday.
@@ -63,12 +63,12 @@ export default function AboutPage() {
             </div>
             <div className="space-y-4">
               <p className="text-lg">
-                From a very young age I've always been into creativity be it
-                music or design but I was into music initially where I started
-                making my own music then I met a graphic designer who always
-                charged me high for a cover. So I decided I needed to learn how
-                to create my own cover, flyers and logos and that was how I was
-                introduced to graphic design.
+                From a very young age I&apos;ve always been into creativity be
+                it music or design but I was into music initially where I
+                started making my own music then I met a graphic designer who
+                always charged me high for a cover. So I decided I needed to
+                learn how to create my own cover, flyers and logos and that was
+                how I was introduced to graphic design.
               </p>
               <p className="text-lg">
                 I got the opportunity to intern as a graphic designer at
@@ -98,7 +98,7 @@ export default function AboutPage() {
               <p className="text-lg">
                 I found myself always researching and practising and joined a
                 community to always develop myself with every chance that I get.
-                I've been able to work on few projects and eventually found
+                I&apos;ve been able to work on few projects and eventually found
                 myself in a tech team (NOVA TECH) where we design and develop
                 websites for clients and it has given me the opportunity to
                 discuss with clients working in start-ups.
