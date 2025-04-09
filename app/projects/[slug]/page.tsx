@@ -2,6 +2,12 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 
+interface ProjectPageProps {
+  params: {
+    slug: string;
+  };
+}
+
 const projects = [
   {
     title: "AI-Powered Teacher Dashboard",
@@ -34,20 +40,19 @@ const projects = [
     role: "UX Designer",
     duration: "4 Months",
     overview:
-      "Instructors face challenges managing student performance across large classes. Tracking grades, attendance, and participation manually can be overwhelming.",
-    audience:
-      "Instructors, Academic institutions, and higher education students.",
+      "Construct your edge and decode the markets. Unleash potential for success and fund your future with a futuristic trading platform.",
+    audience: "Beginner to pro traders, and fintech users.",
     challenge:
-      "Instructors need an efficient way to track student performance, predict struggles, and offer timely support.",
+      "Traders need an intuitive platform to analyze, execute, and learn from market behavior.",
     solution:
-      "A smart dashboard with AI-driven insights, grade prediction analysis, and visualization tools for easy tracking.",
+      "A real-time trading UI with simplified metrics, strategy simulation, and smart suggestions.",
     keyFindings: [
-      "Instructors struggle with large class sizes.",
-      "Tracking student performance manually is error-prone.",
-      "AI can help predict struggling students early.",
+      "New traders are overwhelmed by traditional trading UIs.",
+      "Users want quick insights without digging deep into graphs.",
+      "Gamification and AI suggestions increase engagement.",
     ],
     images: {
-      hero: "/teacher-dashboard.png",
+      hero: "/cipher.png",
       insights: "/insights-chart.png",
       performance: "/performance-chart.png",
       aiAlerts: "/ai-alerts.png",
@@ -59,20 +64,19 @@ const projects = [
     role: "UX Designer",
     duration: "4 Months",
     overview:
-      "Instructors face challenges managing student performance across large classes. Tracking grades, attendance, and participation manually can be overwhelming.",
-    audience:
-      "Instructors, Academic institutions, and higher education students.",
+      "A platform to explore, purchase, and read books online, enhancing the digital reading experience.",
+    audience: "Book lovers, online readers, and digital learners.",
     challenge:
-      "Instructors need an efficient way to track student performance, predict struggles, and offer timely support.",
+      "Traditional eBook platforms lack personalization and community features.",
     solution:
-      "A smart dashboard with AI-driven insights, grade prediction analysis, and visualization tools for easy tracking.",
+      "A user-first reading experience with smart recommendations, social reading circles, and a sleek interface.",
     keyFindings: [
-      "Instructors struggle with large class sizes.",
-      "Tracking student performance manually is error-prone.",
-      "AI can help predict struggling students early.",
+      "Users want more than just reading – they want connection.",
+      "AI curation boosts engagement and keeps users exploring.",
+      "Personal libraries and progress tracking improve satisfaction.",
     ],
     images: {
-      hero: "/teacher-dashboard.png",
+      hero: "/booktopia.png",
       insights: "/insights-chart.png",
       performance: "/performance-chart.png",
       aiAlerts: "/ai-alerts.png",
@@ -80,8 +84,7 @@ const projects = [
   },
 ];
 
-// ✅ Fixed typing here:
-export default function ProjectPage({ params }: { params: { slug: string } }) {
+export default function ProjectPage({ params }: ProjectPageProps) {
   const project = projects.find((p) => p.slug === params.slug);
 
   if (!project) return notFound();
@@ -163,4 +166,10 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
       </div>
     </main>
   );
+}
+
+export async function generateStaticParams() {
+  return projects.map((project) => ({
+    slug: project.slug,
+  }));
 }
