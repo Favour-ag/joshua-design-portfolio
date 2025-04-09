@@ -1,25 +1,41 @@
 "use client";
 
-import { Typewriter } from "react-simple-typewriter";
+import { motion } from "framer-motion";
+
+const headingText = "Welcome To My Universe";
 
 const HeroSection: React.FC = () => {
   return (
     <div className="relative h-screen bg-white dark:bg-[#060A0F] text-black dark:text-white font-sans overflow-hidden">
-      {/* Add margin-left to account for Sidebar width */}
-
       {/* Hero Content */}
-      <div className="flex flex-col items-center justify-center h-full text-center space-y-4">
-        <h1 className="text-8xl font-bold">
-          <Typewriter
-            words={["Welcome To My Universe"]}
-            loop={false}
-            cursor
-            cursorStyle="_"
-            typeSpeed={100}
-            deleteSpeed={50}
-          />
-        </h1>
-        <p className="text-xl md:text-2xl">
+      <div className="flex flex-col items-end justify-center h-full text-right space-y-4 pr-6 md:pr-12">
+        <motion.h1
+          className="text-6xl md:text-8xl font-bold flex flex-wrap justify-center"
+          initial="hidden"
+          animate="visible"
+          variants={{
+            visible: {
+              transition: {
+                staggerChildren: 0.09,
+              },
+            },
+          }}
+        >
+          {headingText.split("").map((char, index) => (
+            <motion.span
+              key={index}
+              variants={{
+                hidden: { opacity: 0, x: -30 },
+                visible: { opacity: 1, x: 0 },
+              }}
+              transition={{ duration: 0.4, ease: "easeInOut" }}
+            >
+              {char === " " ? "\u00A0" : char}
+            </motion.span>
+          ))}
+        </motion.h1>
+
+        <p className="text-lg md:text-xl">
           I'm <span className="text-blue-500">Joshua</span>, A{" "}
           <span className="text-blue-500">UX Designer</span>, Focused on
           Designing Beyond The World For{" "}

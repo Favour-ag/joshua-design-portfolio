@@ -87,7 +87,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
 
   return (
     <main className="min-h-screen bg-white dark:bg-[#060A0F] text-black dark:text-white py-20 px-6">
-      <div className="max-w-4xl mx-auto">
+      <div className="">
         {/* Hero Section */}
         <h1 className="text-4xl font-bold text-center mb-6">{project.title}</h1>
         <p className="text-gray-400 text-center">

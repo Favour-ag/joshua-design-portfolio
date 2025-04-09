@@ -18,7 +18,7 @@ const Sidebar = () => {
 
   return (
     <aside
-      className={`border fixed left-4 top-1/2 -translate-y-1/2 flex flex-col items-center justify-around h-[90vh] w-20 
+      className={`border ml-4 mt-8 flex flex-col items-center justify-around h-[90vh] w-20 
       bg-white text-black dark:bg-[#080E14] dark:text-white rounded-full py-8 shadow-xl transition`}
     >
       <h2 className="text-black dark:text-white text-md font-bold">JOSHUA</h2>

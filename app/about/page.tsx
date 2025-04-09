@@ -8,7 +8,7 @@ import Image from "next/image";
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-white dark:bg-[#060A0F] text-foreground">
-      <div className="container max-w-4xl mx-auto px-4 py-12">
+      <div className="container px-8 py-12">
         {/* Hero Section */}
         <section className="mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
