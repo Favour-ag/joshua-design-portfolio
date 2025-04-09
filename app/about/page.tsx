@@ -29,12 +29,12 @@ export default function AboutPage() {
               always felt that was absurd but looking at my journey so far
             </p>
             <p className="text-lg">
-              I&apos;m starting to believe that it's true (not that I&apos;m
-              being stereotypical). I graduated from Afk Basosta University with
-              a bachelor's degree in Computer Engineering and I have gotten the
-              opportunity to work with a lot of designers and developers who
-              have inspired me to always develop myself because I believe we
-              learn everyday.
+              I&apos;m starting to believe that it&apos;s true (not that
+              I&apos;m being stereotypical). I graduated from Afk Basosta
+              University with a bachelor&apos;s degree in Computer Engineering
+              and I have gotten the opportunity to work with a lot of designers
+              and developers who have inspired me to always develop myself
+              because I believe we learn everyday.
             </p>
           </div>
           <div className="aspect-square relative rounded-lg overflow-hidden">
@@ -122,8 +122,10 @@ export default function AboutPage() {
 
         {/* Call to Action */}
         <section className="text-center space-y-6">
-          <h2 className="text-2xl font-bold">You've made it to this point!</h2>
-          <p className="text-lg">Great to see you here, Let's Connect</p>
+          <h2 className="text-2xl font-bold">
+            You&apos;ve made it to this point!
+          </h2>
+          <p className="text-lg">Great to see you here, Let&apos;s Connect</p>
           <Button asChild>
             <Link href="/contact">Get in Touch</Link>
           </Button>
