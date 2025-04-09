@@ -1,5 +1,4 @@
 import ContactForm from "@/components/ContactForm";
-import Sidebar from "@/components/Sidebar";
 
 export default function ContactPage() {
   return (
