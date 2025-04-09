@@ -2,6 +2,12 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 
+interface ProjectPageProps {
+  params: {
+    slug: string;
+  };
+}
+
 const projects = [
   {
     title: "AI-Powered Teacher Dashboard",
@@ -80,14 +86,14 @@ const projects = [
   },
 ];
 
-export default function ProjectPage({ params }: { params: { slug: string } }) {
+export default function ProjectPage({ params }: ProjectPageProps) {
   const project = projects.find((p) => p.slug === params.slug);
 
   if (!project) return notFound();
 
   return (
     <main className="min-h-screen bg-white dark:bg-[#060A0F] text-black dark:text-white py-20 px-6">
-      <div className="">
+      <div>
         {/* Hero Section */}
         <h1 className="text-4xl font-bold text-center mb-6">{project.title}</h1>
         <p className="text-gray-400 text-center">
