@@ -36,7 +36,7 @@ const HeroSection: React.FC = () => {
         </motion.h1>
 
         <p className="text-lg md:text-xl">
-          I'm <span className="text-blue-500">Joshua</span>, A{" "}
+          I&apos;m <span className="text-blue-500">Joshua</span>, A{" "}
           <span className="text-blue-500">UX Designer</span>, Focused on
           Designing Beyond The World For{" "}
           <span className="text-blue-500">YOU</span>
