@@ -2,12 +2,6 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 
-interface ProjectPageProps {
-  params: {
-    slug: string;
-  };
-}
-
 const projects = [
   {
     title: "AI-Powered Teacher Dashboard",
@@ -86,7 +80,8 @@ const projects = [
   },
 ];
 
-export default function ProjectPage({ params }: ProjectPageProps) {
+// ✅ Fixed typing here:
+export default function ProjectPage({ params }: { params: { slug: string } }) {
   const project = projects.find((p) => p.slug === params.slug);
 
   if (!project) return notFound();
