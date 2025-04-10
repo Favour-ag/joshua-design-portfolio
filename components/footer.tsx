@@ -1,35 +1,37 @@
+import Link from "next/link";
+import { FaLinkedinIn, FaDribbble, FaBehance } from "react-icons/fa";
+
 export function Footer() {
   return (
-    <footer className="py-6 md:py-8">
-      <div className="container mx-auto flex justify-around px-6">
-        <p className="text-muted-foreground hover:text-foreground transition-colors cursor-pointer">
-          © 2024 Portfolio. All rights reserved.
-        </p>
+    <footer className="py-6 md:py-8 bg-inherit text-white border">
+      <div className="container mx-auto flex items-center justify-between px-6">
+        <p className="text-sm md:text-base cursor-pointer">LOGO</p>
+        <p className="text-sm md:text-base">Let's Work Together</p>
         <div className="flex items-center gap-4">
-          <a
-            href="https://github.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-foreground transition-colors"
-          >
-            GitHub
-          </a>
-          <a
+          <Link
             href="https://linkedin.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-foreground transition-colors"
+            className="text-sm md:text-base hover:opacity-75 transition-opacity"
           >
-            LinkedIn
-          </a>
-          <a
-            href="https://twitter.com"
+            <FaLinkedinIn size={20} />
+          </Link>
+          <Link
+            href="https://dribbble.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-foreground transition-colors"
+            className="text-sm md:text-base hover:opacity-75 transition-opacity"
           >
-            Twitter
-          </a>
+            <FaDribbble size={20} />
+          </Link>
+          <Link
+            href="https://behance.net"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm md:text-base hover:opacity-75 transition-opacity"
+          >
+            <FaBehance size={20} />
+          </Link>
         </div>
       </div>
     </footer>
