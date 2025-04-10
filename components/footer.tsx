@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FaLinkedinIn, FaDribbble, FaBehance } from "react-icons/fa";
+import { FaLinkedinIn, FaInstagram, FaBehance } from "react-icons/fa";
 
 export function Footer() {
   return (
@@ -22,7 +22,7 @@ export function Footer() {
             rel="noopener noreferrer"
             className="text-sm md:text-base hover:opacity-75 transition-opacity"
           >
-            <FaDribbble size={20} />
+            <FaInstagram size={20} />
           </Link>
           <Link
             href="https://behance.net"

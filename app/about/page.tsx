@@ -8,41 +8,41 @@ import Image from "next/image";
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-white dark:bg-[#060A0F] text-foreground">
-      <div className="container px-8 py-12">
+      <div className="container max-w-4xl mx-auto px-4 py-12">
         {/* Hero Section */}
         <section className="mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
             My crazy journey as a Computer Engineering student with a passion
             for music and design
           </h1>
-          <p className="text-xl text-muted-foreground">
-            The start of my Journey.
-          </p>
         </section>
 
         {/* Early Interest Section */}
         <section className="mb-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="space-y-4">
+            <p className="text-xl text-muted-foreground">
+              The start of my Journey.
+            </p>
             <p className="text-lg">
               For a while I&apos;ve always heard that left-handed people tend to
               excel in visual-spatial tasks (fun fact: I&apos;m left-handed). I
               always felt that was absurd but looking at my journey so far
             </p>
             <p className="text-lg">
-              I&apos;m starting to believe that it&apos;s true (not that
-              I&apos;m being stereotypical). I graduated from Afk Basosta
-              University with a bachelor&apos;s degree in Computer Engineering
-              and I have gotten the opportunity to work with a lot of designers
-              and developers who have inspired me to always develop myself
-              because I believe we learn everyday.
+              I&apos;m starting to believe that it's true (not that I&apos;m
+              being stereotypical). I graduated from Afk Basosta University with
+              a bachelor's degree in Computer Engineering and I have gotten the
+              opportunity to work with a lot of designers and developers who
+              have inspired me to always develop myself because I believe we
+              learn everyday.
             </p>
           </div>
-          <div className="aspect-square relative rounded-lg overflow-hidden">
+          <div className="aspect-square relative overflow-hidden">
             <Image
-              src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8"
+              src="/images/joshua.svg"
               alt="Portrait in black and white"
               fill
-              className="object-cover"
+              className=""
             />
           </div>
         </section>
@@ -55,7 +55,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div className="aspect-video relative rounded-lg overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1511379938547-c1f69419868d"
+                src="/images/Group4.svg"
                 alt="Music studio setup"
                 fill
                 className="object-cover"
@@ -111,7 +111,7 @@ export default function AboutPage() {
             </div>
             <div className="aspect-video relative rounded-lg overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1507842217343-583bb7270b66"
+                src="/images/joshua-snow.svg"
                 alt="Design workspace"
                 fill
                 className="object-cover"
@@ -122,13 +122,8 @@ export default function AboutPage() {
 
         {/* Call to Action */}
         <section className="text-center space-y-6">
-          <h2 className="text-2xl font-bold">
-            You&apos;ve made it to this point!
-          </h2>
-          <p className="text-lg">Great to see you here, Let&apos;s Connect</p>
-          <Button asChild>
-            <Link href="/contact">Get in Touch</Link>
-          </Button>
+          <h2 className="text-2xl font-bold">You've made it to this point!</h2>
+          <p className="text-lg">Great to see you here, Let's Connect</p>
         </section>
       </div>
     </div>

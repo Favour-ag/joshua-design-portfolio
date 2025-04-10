@@ -80,7 +80,7 @@ export default function Projects() {
                     <Image
                       src={project.chart}
                       alt="Supplementary Visual"
-                      width={500}
+                      width={300}
                       height={200}
                       className=" w-full "
                     />
