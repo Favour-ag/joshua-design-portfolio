@@ -2,13 +2,31 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 
+interface Project {
+  title: string;
+  slug: string;
+  role: string;
+  duration: string;
+  overview: string;
+  audience: string;
+  challenge: string;
+  solution: string;
+  keyFindings: string[];
+  images: {
+    hero: string;
+    insights: string;
+    performance: string;
+    aiAlerts: string;
+  };
+}
+
 interface ProjectPageProps {
   params: {
     slug: string;
   };
 }
 
-const projects = [
+const projects: Project[] = [
   {
     title: "AI-Powered Teacher Dashboard",
     slug: "ai-powered-teacher-dashboard",
@@ -84,7 +102,7 @@ const projects = [
   },
 ];
 
-export default function ProjectPage({ params }: { params: { slug: string } }) {
+export default function ProjectPage({ params }: ProjectPageProps) {
   const project = projects.find((p) => p.slug === params.slug);
 
   if (!project) return notFound();
@@ -167,6 +185,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
     </main>
   );
 }
+
 export async function generateStaticParams() {
   return projects.map((project) => ({
     slug: project.slug,
