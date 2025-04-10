@@ -1,7 +1,7 @@
-/* eslint-disable */
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata, ResolvingMetadata } from "next";
 
 const projects = [
   {
@@ -81,7 +81,11 @@ const projects = [
   },
 ];
 
-export default function ProjectPage({ params }: { params: { slug: string } }) {
+type Props = {
+  params: { slug: string };
+};
+
+export default function ProjectPage({ params }: Props) {
   const project = projects.find((p) => p.slug === params.slug);
 
   if (!project) return notFound();
@@ -163,4 +167,10 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
       </div>
     </main>
   );
+}
+
+export async function generateStaticParams() {
+  return projects.map((project) => ({
+    slug: project.slug,
+  }));
 }
