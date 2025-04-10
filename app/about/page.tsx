@@ -53,12 +53,12 @@ export default function AboutPage() {
             My Journey from Music to Graphic Design
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div className="aspect-video relative rounded-lg overflow-hidden">
+            <div className="flex justify-center items-center">
               <Image
                 src="/images/Group4.svg"
                 alt="Music studio setup"
-                fill
-                className="object-cover"
+                width={300}
+                height={400}
               />
             </div>
             <div className="space-y-4">
@@ -109,12 +109,12 @@ export default function AboutPage() {
                 settings pushed me to develop as a researcher and designer.
               </p>
             </div>
-            <div className="aspect-video relative rounded-lg overflow-hidden">
+            <div className="flex justify-center items-center">
               <Image
                 src="/images/joshua-snow.svg"
                 alt="Design workspace"
-                fill
-                className="object-cover"
+                width={500}
+                height={700}
               />
             </div>
           </div>
