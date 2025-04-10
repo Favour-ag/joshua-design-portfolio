@@ -18,10 +18,13 @@ const Sidebar = () => {
 
   return (
     <aside
-      className={`border ml-4 mt-8 flex flex-col items-center justify-around h-[90vh] w-20 
+      className={`border ml-4 mt-22 flex flex-col items-center justify-between h-[90vh] w-20 
       bg-white text-black dark:bg-[#080E14] dark:text-white rounded-full py-8 shadow-xl transition`}
     >
-      <h2 className="text-black dark:text-white text-md font-bold">JOSHUA</h2>
+      <div className="absolute z-50 top-2">
+        <p>Joshua Okoh</p>
+      </div>
+      {/* <h2 className="text-black dark:text-white text-md font-bold">JOSHUA</h2> */}
 
       {/* Navigation Links */}
       <div className="flex flex-col">
