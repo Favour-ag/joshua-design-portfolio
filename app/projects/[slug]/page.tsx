@@ -1,32 +1,9 @@
+/* eslint-disable */
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 
-interface Project {
-  title: string;
-  slug: string;
-  role: string;
-  duration: string;
-  overview: string;
-  audience: string;
-  challenge: string;
-  solution: string;
-  keyFindings: string[];
-  images: {
-    hero: string;
-    insights: string;
-    performance: string;
-    aiAlerts: string;
-  };
-}
-
-interface ProjectPageProps {
-  params: {
-    slug: string;
-  };
-}
-
-const projects: Project[] = [
+const projects = [
   {
     title: "AI-Powered Teacher Dashboard",
     slug: "ai-powered-teacher-dashboard",
@@ -58,19 +35,20 @@ const projects: Project[] = [
     role: "UX Designer",
     duration: "4 Months",
     overview:
-      "Construct your edge and decode the markets. Unleash potential for success and fund your future with a futuristic trading platform.",
-    audience: "Beginner to pro traders, and fintech users.",
+      "Instructors face challenges managing student performance across large classes. Tracking grades, attendance, and participation manually can be overwhelming.",
+    audience:
+      "Instructors, Academic institutions, and higher education students.",
     challenge:
-      "Traders need an intuitive platform to analyze, execute, and learn from market behavior.",
+      "Instructors need an efficient way to track student performance, predict struggles, and offer timely support.",
     solution:
-      "A real-time trading UI with simplified metrics, strategy simulation, and smart suggestions.",
+      "A smart dashboard with AI-driven insights, grade prediction analysis, and visualization tools for easy tracking.",
     keyFindings: [
-      "New traders are overwhelmed by traditional trading UIs.",
-      "Users want quick insights without digging deep into graphs.",
-      "Gamification and AI suggestions increase engagement.",
+      "Instructors struggle with large class sizes.",
+      "Tracking student performance manually is error-prone.",
+      "AI can help predict struggling students early.",
     ],
     images: {
-      hero: "/cipher.png",
+      hero: "/teacher-dashboard.png",
       insights: "/insights-chart.png",
       performance: "/performance-chart.png",
       aiAlerts: "/ai-alerts.png",
@@ -82,19 +60,20 @@ const projects: Project[] = [
     role: "UX Designer",
     duration: "4 Months",
     overview:
-      "A platform to explore, purchase, and read books online, enhancing the digital reading experience.",
-    audience: "Book lovers, online readers, and digital learners.",
+      "Instructors face challenges managing student performance across large classes. Tracking grades, attendance, and participation manually can be overwhelming.",
+    audience:
+      "Instructors, Academic institutions, and higher education students.",
     challenge:
-      "Traditional eBook platforms lack personalization and community features.",
+      "Instructors need an efficient way to track student performance, predict struggles, and offer timely support.",
     solution:
-      "A user-first reading experience with smart recommendations, social reading circles, and a sleek interface.",
+      "A smart dashboard with AI-driven insights, grade prediction analysis, and visualization tools for easy tracking.",
     keyFindings: [
-      "Users want more than just reading – they want connection.",
-      "AI curation boosts engagement and keeps users exploring.",
-      "Personal libraries and progress tracking improve satisfaction.",
+      "Instructors struggle with large class sizes.",
+      "Tracking student performance manually is error-prone.",
+      "AI can help predict struggling students early.",
     ],
     images: {
-      hero: "/booktopia.png",
+      hero: "/teacher-dashboard.png",
       insights: "/insights-chart.png",
       performance: "/performance-chart.png",
       aiAlerts: "/ai-alerts.png",
@@ -102,14 +81,14 @@ const projects: Project[] = [
   },
 ];
 
-export default function ProjectPage({ params }: ProjectPageProps) {
+export default function ProjectPage({ params }: { params: { slug: string } }) {
   const project = projects.find((p) => p.slug === params.slug);
 
   if (!project) return notFound();
 
   return (
     <main className="min-h-screen bg-white dark:bg-[#060A0F] text-black dark:text-white py-20 px-6">
-      <div>
+      <div className="">
         {/* Hero Section */}
         <h1 className="text-4xl font-bold text-center mb-6">{project.title}</h1>
         <p className="text-gray-400 text-center">
@@ -184,10 +163,4 @@ export default function ProjectPage({ params }: ProjectPageProps) {
       </div>
     </main>
   );
-}
-
-export async function generateStaticParams() {
-  return projects.map((project) => ({
-    slug: project.slug,
-  }));
 }
