@@ -38,7 +38,7 @@ export default function RootLayout({
         >
           <div className="flex">
             <Sidebar />
-            <main className="flex-1 min-h-screen bg-white dark:bg-[#060A0F] text-black dark:text-white ml-4">
+            <main className="flex-1 min-h-screen bg-white dark:bg-[#060A0F] text-black dark:text-white ">
               {children}
             </main>
           </div>
