@@ -19,21 +19,17 @@ const Sidebar = () => {
 
   return (
     <aside
-      className={`border ml-4 mt-22 flex flex-col items-center justify-between h-[90vh] w-20 
-      bg-white text-black dark:bg-[#080E14] dark:text-white rounded-full py-8 shadow-xl transition`}
+      className={`
+        fixed bottom-0 left-0 z-50 w-full bg-white text-black dark:bg-[#080E14] dark:text-white
+        flex justify-around items-center py-4 md:relative md:ml-4 md:mt-22 md:h-[90vh] md:w-20
+        md:flex-col md:items-center md:justify-between md:rounded-full md:py-8 md:shadow-xl
+        transition
+      `}
     >
-      <div className="absolute z-50 top-2">
-        <Image
-          src="/images/logo_dark.svg"
-          alt="Music studio setup"
-          width={300}
-          height={400}
-        />
-      </div>
-      {/* <h2 className="text-black dark:text-white text-md font-bold">JOSHUA</h2> */}
+      {/* <h2 className="text-black dark:text-white text-md font-bold md:block hidden">JOSHUA</h2> */}
 
       {/* Navigation Links */}
-      <div className="flex flex-col">
+      <div className="flex md:flex-col">
         <NavItem
           href="/"
           icon={<FaHome />}
@@ -60,8 +56,8 @@ const Sidebar = () => {
         />
       </div>
 
-      {/* Social Media Icons at Bottom */}
-      <div className="flex flex-col gap-5 py-6">
+      {/* Social Media Icons (Shown on mobile, at the bottom on desktop) */}
+      <div className="flex gap-5 md:flex-col md:py-6">
         <SocialLink
           href="https://linkedin.com/in/yourprofile"
           icon={<FaLinkedin />}
@@ -94,15 +90,19 @@ const NavItem = ({
   return (
     <Link
       href={href}
-      className={`flex flex-col items-center gap-1 p-3 transition 
+      className={`
+        flex flex-col items-center gap-1 p-3 transition
         ${
           active
             ? "text-blue-400"
             : "text-black dark:text-white hover:text-blue-500 dark:hover:text-blue-300"
-        }`}
+        }
+        md:flex-col // Ensure column layout on desktop
+      `}
     >
       <div className="text-2xl">{icon}</div>
-      <span className="text-xs">{label}</span>
+      <span className="text-xs md:block hidden">{label}</span>{" "}
+      {/* Hide label on mobile */}
     </Link>
   );
 };

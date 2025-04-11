@@ -65,7 +65,7 @@ export default function Projects() {
                 <motion.div // Changed div to motion.div for animation
                   className={`
                     group grid md:grid-cols-12 gap-8 cursor-pointer
-                    h-full md:h-[400px] p-6 rounded-xl shadow-xl // Added shadow-xl here
+                    h-full md:h-[400px] p-6 rounded-xl shadow-xl 
                     border border-gray-200 dark:border-gray-800
                     hover:border-opacity-0 transition-all duration-300
                     hover:bg-gradient-to-br hover:from-white/5 hover:to-transparent
