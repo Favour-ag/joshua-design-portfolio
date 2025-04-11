@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -22,7 +23,12 @@ const Sidebar = () => {
       bg-white text-black dark:bg-[#080E14] dark:text-white rounded-full py-8 shadow-xl transition`}
     >
       <div className="absolute z-50 top-2">
-        <p>Joshua Okoh</p>
+        <Image
+          src="/images/logo_dark.svg"
+          alt="Music studio setup"
+          width={300}
+          height={400}
+        />
       </div>
       {/* <h2 className="text-black dark:text-white text-md font-bold">JOSHUA</h2> */}
 
