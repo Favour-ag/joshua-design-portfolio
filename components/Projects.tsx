@@ -35,7 +35,7 @@ const projects = [
     description:
       "Instructors face increasing challenges in managing student performance across large classes. Tracking grades, attendance, and participation manually can be overwhelming and often results in missed opportunities for early intervention.",
     image: "/images/booktopia.svg",
-    chart: "/images/astro.svg",
+    chart: "/images/book.svg",
     theme: "amber",
   },
 ];

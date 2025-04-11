@@ -6,6 +6,7 @@ import Sidebar from "@/components/Sidebar";
 import BackToTop from "@/components/BackToTop";
 import ThemeToggle from "@/components/ThemeToggle";
 import { Footer } from "@/components/footer";
+import Image from "next/image";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,6 +38,15 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <div className="flex">
+            <div className="absolute p-2">
+              <Image
+                src="/images/logo_dark.svg"
+                alt="Cipher Dashboard"
+                width={100}
+                height={100}
+                className=""
+              />
+            </div>
             <Sidebar />
             <main className="flex-1 min-h-screen bg-white dark:bg-[#060A0F] text-black dark:text-white ">
               {children}
