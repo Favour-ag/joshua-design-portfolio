@@ -12,8 +12,8 @@ export default function AboutPage() {
         {/* Hero Section */}
         <section className="mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            My crazy journey as a Computer Engineering student with a passion
-            for music and design
+            My <span className=" text-slate-300">crazy</span> journey as a
+            Computer Engineering student with a passion for music and design
           </h1>
         </section>
 

@@ -1,15 +1,46 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
+
+const text =
+  "As an instructor, managing student performance feels overwhelming at times. Manually tracking grades, attendance, and participation across large classes is exhausting, and I worry that I’m missing critical opportunities to identify and support students who are struggling.";
 
 export default function AiDashboardPage() {
   return (
     <main className="bg-white dark:bg-[#060A0F] text-black dark:text-white font-sans min-h-screen px-4 py-12">
       <div className="max-w-5xl mx-auto">
-        <h1 className="text-3xl md:text-5xl font-bold text-center mb-10">
+        <p className="text-3xl md:text-5xl font-bold text-center mb-10">
           AI-Powered Teacher Dashboard
-        </h1>
+        </p>
 
+        <div>
+          <motion.p
+            className=" font-bold flex flex-wrap justify-center"
+            initial="hidden"
+            animate="visible"
+            variants={{
+              visible: {
+                transition: {
+                  staggerChildren: 0.09,
+                },
+              },
+            }}
+          >
+            {text.split("").map((char, index) => (
+              <motion.span
+                key={index}
+                variants={{
+                  hidden: { opacity: 0, x: -30 },
+                  visible: { opacity: 1, x: 0 },
+                }}
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+              >
+                {char === " " ? "\u00A0" : char}
+              </motion.span>
+            ))}
+          </motion.p>
+        </div>
         {/* Project Overview */}
         <h2 className="text-2xl font-semibold mb-4">Project Overview</h2>
         <p className="text-gray-300 mb-4">
@@ -24,7 +55,7 @@ export default function AiDashboardPage() {
 
         <div className="my-6">
           <Image
-            src="/images/classroom.jpg"
+            src="/images/classroom.png"
             alt="Classroom"
             width={1000}
             height={600}
@@ -103,7 +134,7 @@ export default function AiDashboardPage() {
           <div className="text-center">
             <h3 className="text-lg font-medium mb-2">Prediction Analytics</h3>
             <Image
-              src="/images/prediction-analytics.png"
+              src="/images/grade-predict.svg"
               alt="Prediction Analytics"
               width={600}
               height={300}
@@ -113,7 +144,7 @@ export default function AiDashboardPage() {
           <div className="text-center">
             <h3 className="text-lg font-medium mb-2">Progress Trends</h3>
             <Image
-              src="/images/progress-trends.png"
+              src="/images/performance-metrics.svg"
               alt="Progress Trends"
               width={600}
               height={300}
@@ -123,7 +154,7 @@ export default function AiDashboardPage() {
           <div className="text-center">
             <h3 className="text-lg font-medium mb-2">AI Recommendations</h3>
             <Image
-              src="/images/ai-recommendations.png"
+              src="/images/ai-recommend.svg"
               alt="AI Recommendations"
               width={600}
               height={300}
@@ -133,7 +164,7 @@ export default function AiDashboardPage() {
           <div className="text-center">
             <h3 className="text-lg font-medium mb-2">Focused Alerts</h3>
             <Image
-              src="/images/focused-alerts.png"
+              src="/images/focused-alert.svg"
               alt="Focused Alerts"
               width={600}
               height={300}
@@ -151,6 +182,12 @@ export default function AiDashboardPage() {
           feedback, and enhanced clarity. The final prototype empowered
           professors to make better data-driven decisions.
         </p>
+      </div>
+      {/* Floating Dots */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute w-3 h-3 bg-gray-300 rounded-full top-1/4 left-1/4 animate-pulse"></div>
+        <div className="absolute w-3 h-3 bg-gray-300 rounded-full bottom-1/3 right-1/3 animate-pulse"></div>
+        <div className="absolute w-3 h-3 bg-gray-300 rounded-full top-1/3 right-1/4 animate-pulse"></div>
       </div>
     </main>
   );
