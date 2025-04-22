@@ -22,7 +22,7 @@ const Sidebar = () => {
       className={`
         fixed bottom-0 left-0 z-50 w-full bg-white text-black dark:bg-[#080E14] dark:text-white
         flex justify-around items-center py-4 md:relative md:ml-4 md:mt-22 md:h-[90vh] md:w-20
-        md:flex-col md:items-center md:justify-between md:rounded-full md:py-8 md:shadow-xl
+        md:flex-col md:items-center md:justify-between md:rounded-full md:py-8 md:shadow-xl outline-2
         transition
       `}
     >
