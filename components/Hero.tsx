@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const headingText = "Welcome To My Universe";
 
@@ -43,7 +44,7 @@ const HeroSection: React.FC = () => {
         </p>
       </div>
 
-      {/* Mode Toggle */}
+      {/* Mode Toggle Placeholder */}
       <div className="z-10 absolute top-1/2 right-4 transform -translate-y-1/2">
         {/* <ModeToggle /> */}
       </div>

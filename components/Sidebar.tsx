@@ -14,64 +14,89 @@ import {
   FaBehance,
 } from "react-icons/fa";
 
+import { useTheme } from "next-themes";
+
+const Logo = () => {
+  const { theme } = useTheme();
+
+  const logoSrc =
+    theme === "dark" ? "/images/logo_dark.svg" : "/images/logo-dark.svg";
+
+  return (
+    <Image
+      src={logoSrc}
+      alt="Cipher Dashboard"
+      width={100}
+      height={100}
+      className=""
+    />
+  );
+};
+
 const Sidebar = () => {
   const pathname = usePathname();
 
   return (
-    <aside
-      className={`
+    <div>
+      {/* Logo */}
+      <div className="absolute p-2">
+        <Logo />
+      </div>
+      <aside
+        className={`
         fixed bottom-0 left-0 z-50 w-full bg-white text-black dark:bg-[#080E14] dark:text-white
         flex justify-around items-center py-4 md:relative md:ml-4 md:mt-22 md:h-[90vh] md:w-20
         md:flex-col md:items-center md:justify-between md:rounded-full md:py-8 md:shadow-xl outline-2
         transition
       `}
-    >
-      {/* <h2 className="text-black dark:text-white text-md font-bold md:block hidden">JOSHUA</h2> */}
+      >
+        {/* <h2 className="text-black dark:text-white text-md font-bold md:block hidden">JOSHUA</h2> */}
 
-      {/* Navigation Links */}
-      <div className="flex md:flex-col">
-        <NavItem
-          href="/"
-          icon={<FaHome />}
-          label="Home"
-          active={pathname === "/"}
-        />
-        <NavItem
-          href="/about"
-          icon={<FaUser />}
-          label="About"
-          active={pathname === "/about"}
-        />
-        <NavItem
-          href="/contact"
-          icon={<FaEnvelope />}
-          label="Say Hi"
-          active={pathname === "/contact"}
-        />
-        <NavItem
-          href="/projects"
-          icon={<FaBriefcase />}
-          label="My Work"
-          active={pathname === "/projects"}
-        />
-      </div>
+        {/* Navigation Links */}
+        <div className="flex md:flex-col">
+          <NavItem
+            href="/"
+            icon={<FaHome />}
+            label="Home"
+            active={pathname === "/"}
+          />
+          <NavItem
+            href="/about"
+            icon={<FaUser />}
+            label="About"
+            active={pathname === "/about"}
+          />
+          <NavItem
+            href="/contact"
+            icon={<FaEnvelope />}
+            label="Say Hi"
+            active={pathname === "/contact"}
+          />
+          <NavItem
+            href="/projects"
+            icon={<FaBriefcase />}
+            label="My Work"
+            active={pathname === "/projects"}
+          />
+        </div>
 
-      {/* Social Media Icons (Shown on mobile, at the bottom on desktop) */}
-      <div className="flex gap-5 md:flex-col md:py-6">
-        <SocialLink
-          href="https://linkedin.com/in/yourprofile"
-          icon={<FaLinkedin />}
-        />
-        <SocialLink
-          href="https://instagram.com/yourprofile"
-          icon={<FaInstagram />}
-        />
-        <SocialLink
-          href="https://behance.net/yourprofile"
-          icon={<FaBehance />}
-        />
-      </div>
-    </aside>
+        {/* Social Media Icons (Shown on mobile, at the bottom on desktop) */}
+        <div className="flex gap-5 md:flex-col md:py-6">
+          <SocialLink
+            href="https://linkedin.com/in/yourprofile"
+            icon={<FaLinkedin />}
+          />
+          <SocialLink
+            href="https://instagram.com/yourprofile"
+            icon={<FaInstagram />}
+          />
+          <SocialLink
+            href="https://behance.net/yourprofile"
+            icon={<FaBehance />}
+          />
+        </div>
+      </aside>
+    </div>
   );
 };
 
