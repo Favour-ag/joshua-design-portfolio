@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white dark:bg-[#060A0F] text-black dark:text-white`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white dark:bg-[#060A0F] text-black dark:text-white lg:px-2`}
       >
         <ThemeProvider
           attribute="class"
@@ -38,19 +38,18 @@ export default function RootLayout({
         >
           <div className="flex">
             <Sidebar />
-            <main className="flex-1 min-h-screen bg-white dark:bg-[#060A0F] text-black dark:text-white ">
+            <main className="flex-1 min-h-screen bg-white dark:bg-[#060A0F] text-black dark:text-white">
               {children}
+              {/* Move ThemeToggle inside main content */}
+              <div className="fixed bottom-4 right-4 z-50">
+                <ThemeToggle />
+              </div>
+              <BackToTop />
             </main>
           </div>
-
-          {/* ✅ Theme Toggle Button */}
-          <ThemeToggle />
-
-          {/* ✅ Back to Top Button */}
-          <BackToTop />
+          <Footer />
         </ThemeProvider>
       </body>
-      <Footer />
     </html>
   );
 }
